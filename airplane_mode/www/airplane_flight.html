@@ -1,0 +1,50 @@
+<!-- airplane_flight.html -->
+
+<style>
+  .flight-card {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 24px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: sans-serif;
+  }
+  .flight-card h2 {
+    margin-bottom: 16px;
+    font-size: 28px;
+    color: #1a1a1a;
+  }
+  .flight-detail {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .book-btn {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+</style>
+
+<div class="flight-card">
+  <h2>{{ doc.airline }}</h2>
+
+  <div class="flight-detail">
+    <strong>{{ doc.source_airport_code }}</strong> → <strong>{{ doc.destination_airport_code }}</strong>
+  </div>
+  <div class="flight-detail">
+    Date of Departure: {{ frappe.format(doc.date_of_departure, {"fieldtype": "Date"}) }}
+  </div>
+  <div class="flight-detail">
+    Time: {{ doc.time_of_departure }}
+  </div>
+  <div class="flight-detail">
+    Duration: {{ doc.duration }}
+  </div>
+
+  <a href="/book-flight?flight={{ doc.name }}" class="book-btn">Book This Flight</a>
+</div>

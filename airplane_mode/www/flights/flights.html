@@ -1,0 +1,6 @@
+<h1>Flight Details</h1>
+<p><strong>Airline:</strong> {{ frappe.get_doc("Airline", flight.airline).name }}</p>
+<p><strong>Route:</strong> {{ flight.source_airport_code }} → {{ flight.destination_airport_code }}</p>
+<p><strong>Date:</strong> {{ flight.date_of_departure }}</p>
+<p><strong>Departure Time:</strong> {{ flight.time_of_departure }}</p>
+<p><strong>Duration:</strong> {{ flight.duration }}</p>

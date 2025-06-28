@@ -1,0 +1,16 @@
+<!-- don't extend web.html -->
+<html>
+<head>
+  <link rel="stylesheet" href="/assets/airplane_mode/css/custom_shop.css" />
+</head>
+<body>
+  <h2>Available Shops</h2>
+  <ul>
+    {% for shop in shops %}
+      <li>
+        <a href="/shops/{{ shop.name }}">{{ shop.shop_name }} - {{ shop.airport }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
